@@ -73,9 +73,9 @@ function submit() {
     var totseek = [];
     var dfcfs_seq;
     var sstf_seq;
-    var look_seq;
+    // var look_seq;
     var scan_seq;
-    var clook_seq;
+    // var clook_seq;
     var cscan_seq;
     for(var j = 0; j < n_req; j++) {
         var r = S('r'+j).value;
@@ -119,19 +119,19 @@ function submit() {
         async: false
     });
 
-    $.ajax({
-        type: "POST",
-        url: "/disk_scheduling/look",
-        data: {input : input},
-        success: function(result){
-        	result = result.split('\n');
-        	look_seq = result[0];
-        	totseek[2] = result[1];
-            console.log(look_seq);
-            console.log(totseek[2]);
-        },
-        async: false
-    });
+    // $.ajax({
+    //     type: "POST",
+    //     url: "/disk_scheduling/look",
+    //     data: {input : input},
+    //     success: function(result){
+    //     	result = result.split('\n');
+    //     	look_seq = result[0];
+    //     	totseek[2] = result[1];
+    //         console.log(look_seq);
+    //         console.log(totseek[2]);
+    //     },
+    //     async: false
+    // });
 
     $.ajax({
         type: "POST",
@@ -140,27 +140,27 @@ function submit() {
         success: function(result){
             result = result.split('\n');
         	scan_seq = result[0];
-        	totseek[3] = result[1];
+        	totseek[2] = result[1];
             console.log(scan_seq);
-            console.log(totseek[3]);
+            console.log(totseek[2]);
 
         },
         async: false
     });
 
-    $.ajax({
-        type: "POST",
-        url: "/disk_scheduling/clook",
-        data: {input : input},
-        success: function(result){
-            result = result.split('\n');
-        	clook_seq = result[0];
-        	totseek[4] = result[1];
-            console.log(clook_seq);
-            console.log(totseek[4]);
-        },
-        async: false
-    });
+    // $.ajax({
+    //     type: "POST",
+    //     url: "/disk_scheduling/clook",
+    //     data: {input : input},
+    //     success: function(result){
+    //         result = result.split('\n');
+    //     	clook_seq = result[0];
+    //     	totseek[4] = result[1];
+    //         console.log(clook_seq);
+    //         console.log(totseek[4]);
+    //     },
+    //     async: false
+    // });
 
     $.ajax({
         type: "POST",
@@ -169,9 +169,9 @@ function submit() {
         success: function(result){
             result = result.split('\n');
         	cscan_seq = result[0];
-        	totseek[5] = result[1];
+        	totseek[3] = result[1];
             console.log(cscan_seq);
-            console.log(totseek[5]);
+            console.log(totseek[3]);
         },
         async: false
     });
@@ -181,9 +181,9 @@ function submit() {
     draw_graph(totseek);
     summarise(dfcfs_seq,'FCFS','fcfs');
     summarise(sstf_seq,'SSTF','sstf');
-    summarise(look_seq,'Look','look');
+    // summarise(look_seq,'Look','look');
     summarise(scan_seq,'Scan','scan');
-    summarise(clook_seq,'C-Look','clook');
+    // summarise(clook_seq,'C-Look','clook');
     summarise(cscan_seq,'C-Scan','cscan');
 
 }
@@ -204,7 +204,7 @@ function to_int(output){
 }
 
 function draw_graph(totseek) {
-    algo = ['FCFS','SSTF', 'Look', 'Scan', 'C-Look', 'C-Scan'];
+    algo = ['FCFS','SSTF', 'Scan', 'C-Scan'];
     totseek = to_float(totseek);
     console.log(totseek);
     var z = '<div class="container"><div class="row"><div class="col s12" id="chart-container"></div></div></div>';

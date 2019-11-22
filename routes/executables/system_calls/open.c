@@ -14,8 +14,18 @@ int main(int argc, char const *argv[])
 			int filedescriptor = open(argv[2],O_CREAT | O_RDWR,S_IRWXU);
 			if(filedescriptor<0)
 				perror("Error");
-			else
-				printf("File opened\n");
+			else{
+				printf("File Contents: \n");
+				FILE *fp;
+				fp=fopen(argv[2],"r");
+				char c = fgetc(fp);
+				while(c!=EOF){
+					printf("%c", c);
+					c = fgetc(fp);
+				}
+
+				fclose(fp);
+			}
 		}
 
 }
