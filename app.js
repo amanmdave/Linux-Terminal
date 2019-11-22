@@ -9,11 +9,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var system_calls = require('./routes/system_calls');
 var cpu_scheduling = require('./routes/cpu_scheduling');
-var bankers = require('./routes/bankers');
 var disk_scheduling = require('./routes/disk_scheduling');
-var page_replacement = require('./routes/page_replacement');
-var memory_management = require('./routes/memory_management');
-var file_allocation = require('./routes/file_allocation');
 
 var app = express();
 
@@ -32,11 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/system_calls', system_calls);
 app.use('/cpu_scheduling', cpu_scheduling);
-app.use('/bankers', bankers);
 app.use('/disk_scheduling', disk_scheduling);
-app.use('/page_replacement', page_replacement);
-app.use('/memory_management', memory_management);
-app.use('/file_allocation', file_allocation);
 
 
 // catch 404 and forward to error handler
@@ -58,8 +50,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-
-
-/*
-	HTML2Jade converter :- http://html2jade.aaron-powell.com/
-*/

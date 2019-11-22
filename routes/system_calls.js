@@ -2,61 +2,11 @@ var express = require('express');
 var exec = require('child_process').exec;
 var router = express.Router();
 
-// access() call
-router.post('/access', function(req,res){
-	var input="";
-	console.log(req.body.input);
-	exec(__dirname + '/executables/system_calls/access ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log(stdout);
-		console.log(error);
-		res.send(stdout);
-	});
-});
-
-// alarm() call
-router.post('/alarm', function(req,res){
-	var input="";
-	console.log(req.body.input);
-	exec(__dirname + '/executables/system_calls/alarm ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log(stdout);
-		console.log(error);
-		res.send(stdout);
-	});
-});
-
-// clear() call
-router.post('/clear', function(req,res){
-	console.log("Clearing Screen");
-	res.send("success");
-});
-
 // creat() call
 router.post('/creat', function(req,res){
 	var input="";
 	console.log(req.body.input);
 	exec(__dirname + '/executables/system_calls/creat ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log(stdout);
-		console.log(error);
-		res.send(stdout);
-	});
-});
-
-// dup() call
-router.post('/dup', function(req,res){
-	var input="";
-	console.log(req.body.input);
-	exec(__dirname + '/executables/system_calls/dup ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log(stdout);
-		console.log(error);
-		res.send(stdout);
-	});
-});
-
-// exit() call
-router.post('/exit', function(req,res){
-	var input="";
-	console.log(req.body.input);
-	exec(__dirname + '/executables/system_calls/exit ' + req.body.input , function callback(error,stdout,stderr) {
 		console.log(stdout);
 		console.log(error);
 		res.send(stdout);
@@ -82,21 +32,7 @@ router.post('/ls', function(req,res){
 	console.log("Trying to ls before execution!");
 	console.log(req.body.input);
 	exec(__dirname + '/executables/system_calls/ls ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log("Trying to ls!");
-		console.log(stdout);
 		console.log("now error:");
-		console.log(error);
-		res.send(stdout);
-	});
-});
-
-
-// getid() call
-router.post('/getid', function(req,res){
-	var input="";
-	console.log(req.body.input);
-	exec(__dirname + '/executables/system_calls/getid ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log(stdout);
 		console.log(error);
 		res.send(stdout);
 	});
@@ -107,28 +43,6 @@ router.post('/kill', function(req,res){
 	var input="";
 	console.log(req.body.input);
 	exec(__dirname + '/executables/system_calls/kill ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log(stdout);
-		console.log(error);
-		res.send(stdout);
-	});
-});
-
-// link() call
-router.post('/link', function(req,res){
-	var input="";
-	console.log(req.body.input);
-	exec(__dirname + '/executables/system_calls/link ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log(stdout);
-		console.log(error);
-		res.send(stdout);
-	});
-});
-
-// lseek() call
-router.post('lseek', function(req,res){
-	var input="";
-	console.log(req.body.input);
-	exec(__dirname + '/executables/system_calls/lseek ' + req.body.input , function callback(error,stdout,stderr) {
 		console.log(stdout);
 		console.log(error);
 		res.send(stdout);
@@ -157,28 +71,6 @@ router.post('/read', function(req,res){
 	});
 });
 
-// unlink() call
-router.post('/unlink', function(req,res){
-	var input="";
-	console.log(req.body.input);
-	exec(__dirname + '/executables/system_calls/unlink ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log(stdout);
-		console.log(error);
-		res.send(stdout);
-	});
-});
-
-// wait() call
-router.post('/access', function(req,res){
-	var input="";
-	console.log(req.body.input);
-	exec(__dirname + '/executables/system_calls/wait ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log(stdout);
-		console.log(error);
-		res.send(stdout);
-	});
-});
-
 // write() call
 router.post('/write', function(req,res){
 	var input="";
@@ -189,6 +81,7 @@ router.post('/write', function(req,res){
 		res.send(stdout);
 	});
 });
+
 // man() call
 router.post('/man', function(req,res){
 	var input="";

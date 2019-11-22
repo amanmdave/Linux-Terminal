@@ -42,43 +42,7 @@ function shellexec(){
 	console.log(input);
 	temp = temp.split(' ');
 	temp = temp[0];
-	if(temp == 'access')
-	{
-		$.ajax({
-        type: "POST",
-        url: "/system_calls/access",
-        data: {input : input},
-        success: function(result){
-            console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
-			out.innerHTML += result  + "<br>";
-            
-        },
-        async: false
-    });
-	}
-	else if(temp=='alarm')
-	{
-		$.ajax({
-        type: "POST",
-        url: "/system_calls/alarm",
-        data: {input : input},
-        success: function(result){
-            console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
-			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
-            
-        },
-        async: false
-    });
-	}
-	else if(temp=='clear')
-	{
-		$.ajax(function(){
-			window.location.reload();
-		})
-	}
-	else if(temp=='ls')
+	if(temp=='ls')
 	{
 		$.ajax({
         type: "POST",
@@ -108,56 +72,11 @@ function shellexec(){
         async: false
     });
 	}
-	else if(temp=='dup')
-	{
-		$.ajax({
-        type: "POST",
-        url: "/system_calls/dup",
-        data: {input : input},
-        success: function(result){
-            console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
-			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
-            
-        },
-        async: false
-    });
-	}
-	else if(temp=='exit')
-	{
-		$.ajax({
-        type: "POST",
-        url: "/system_calls/exit",
-        data: {input : input},
-        success: function(result){
-            console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
-			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
-            
-        },
-        async: false
-    });
-	}
 	else if(temp=='fork')
 	{
 		$.ajax({
         type: "POST",
         url: "/system_calls/fork",
-        data: {input : input},
-        success: function(result){
-            console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
-			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
-            
-        },
-        async: false
-    });
-	}
-	else if(temp=='getid')
-	{
-		$.ajax({
-        type: "POST",
-        url: "/system_calls/getid",
         data: {input : input},
         success: function(result){
             console.log(result);
@@ -183,36 +102,7 @@ function shellexec(){
         async: false
     });
 	}
-	else if(temp=='link')
-	{
-		$.ajax({
-        type: "POST",
-        url: "/system_calls/link",
-        data: {input : input},
-        success: function(result){
-            console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
-			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
-            
-        },
-        async: false
-    });
-	}
-	else if(temp=='lseek')
-	{
-		$.ajax({
-        type: "POST",
-        url: "/system_calls/lseek",
-        data: {input : input},
-        success: function(result){
-            console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
-			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
-            
-        },
-        async: false
-    });
-	}
+	
 	else if(temp=='open')
 	{
 		$.ajax({
@@ -233,36 +123,6 @@ function shellexec(){
 		$.ajax({
         type: "POST",
         url: "/system_calls/read",
-        data: {input : input},
-        success: function(result){
-            console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
-			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
-            
-        },
-        async: false
-    });
-	}
-	else if(temp=='unlink')
-	{
-		$.ajax({
-        type: "POST",
-        url: "/system_calls/unlink",
-        data: {input : input},
-        success: function(result){
-            console.log(result);
-            out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+'<div style="color:red">'+input+'</div>'+"<br>";
-			out.innerHTML += '<div style="color:red">'+result + '</div>' + "<br>";
-            
-        },
-        async: false
-    });
-	}
-	else if(temp=='wait')
-	{
-		$.ajax({
-        type: "POST",
-        url: "/system_calls/wait",
         data: {input : input},
         success: function(result){
             console.log(result);
@@ -303,35 +163,6 @@ function shellexec(){
         async: false
     });
 	}
-	
-	/*var xhr = new XMLHttpRequest();
-	xhr.onreadystatechange = function() {
-	    if (xhr.readyState == XMLHttpRequest.DONE) {
-	    	output = xhr.responseText;
-	    	console.log(output);
-	    	var pwd;
-		   	[pwd, output] = getPWD(output);
-		   	output = output.split('\n');
-		   	output = getOutputFormated(output);
-			out.innerHTML += '<div class="wd" style="color:red">' + wdt.innerHTML + "</div>" + " $ "+command.value+"<br>";
-			  	out.innerHTML += output;
-			 
-			   	if(output.length>0) out.innerHTML += '<br>';
-					if(command.value.includes('cd') && output.includes('No') == -1){
-						if(command.value.includes('..'))
-							wd.pop();
-						else
-							wd.push(pwd)
-					}
-					command.value = "";
-					if(pwd.length) wdt.innerHTML = wd.join('/');
-					if(wd.length==1) wdt.innerHTML = '/'
-					window.scrollTo(0,document.body.scrollHeight);
-			    }
-			}
-			xhr.open('GET', '/terminal/shellcommand?command='+command.value, true);
-			xhr.send();
-		}*/
 	}
 	function keypress(event) {
 		if (event.keyCode == 13) {

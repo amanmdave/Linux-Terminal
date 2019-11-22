@@ -92,23 +92,7 @@ router.post('/priority-preemptive', function(req,res){
 
 });
 
-// Priority Aging API call
-router.post('/priority-aging', function(req,res){
-	 var input="";
-    console.log(req.body.input);
-	/*for(var i=0;i<req.body.length;i++)
-	{
-		input+=req.body[i]+" ";
-	}
-	console.log(input);
-	*/
-	exec(__dirname + '/executables/cpu_scheduling/priority-aging ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log("hi" + stdout);
-		console.log(error);
-		res.send(stdout);
-	});
 
-});
 
 // Round Robin API call
 router.post('/round_robin', function(req,res){
