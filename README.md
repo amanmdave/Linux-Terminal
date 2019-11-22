@@ -8,8 +8,6 @@ User Interface simulating the major concepts of Operating Systems.
 - CPU Scheduling 
 - Disk Scheduling
 
-### Extra Algorithms Simulated
-- Bankers Algorithm
 
 ### Installation Instructions
 <b>Ubuntu</b>
@@ -39,3 +37,6 @@ User Interface simulating the major concepts of Operating Systems.
 ### Contributors
 - Aman Dave
 - Jainam Chattbar
+
+<hr/>
+ `Incase the system calls don't work, try compiling them`
