@@ -1,6 +1,4 @@
-# OS-Simulator
-[![HitCount](http://hits.dwyl.com/mishal23/os-simulator.svg)](http://hits.dwyl.com/mishal23/os-simulator)
-
+# Linux Terminal
 User Interface simulating the major concepts of Operating Systems.
 
 ### Simulations Done
@@ -28,10 +26,10 @@ User Interface simulating the major concepts of Operating Systems.
 
 ### How to Run?
 - Open git bash
-- git clone https://github.com/mishal23/os-simulator.git
-- cd os-simulator
+- `git clone https://github.com/wizArD-1910/Linux-Terminal`
+- `cd Linux-Terminal`
 - `npm install` (To install all the dependency packages)
-- `npm start`
+- `npm start` (To run the application)
 - Go to Browser and type http://localhost:3000
 
 ### Contributors
@@ -39,4 +37,4 @@ User Interface simulating the major concepts of Operating Systems.
 - Jainam Chattbar
 
 <hr/>
- `Incase the system calls don't work, try compiling them`
+    `Incase the system calls don't work, try compiling them`

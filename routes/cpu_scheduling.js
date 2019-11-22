@@ -14,7 +14,6 @@ router.post('/fcfs', function(req, res) {
 	console.log(input);
 	*/
 	exec(__dirname + '/executables/cpu_scheduling/fcfs ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log("hi" + stdout);
 		console.log(error);
 		res.send(stdout);
 	});
@@ -31,7 +30,6 @@ router.post('/sjf-nonpreemptive', function(req,res){
 	console.log(input);
 	*/
 	exec(__dirname + '/executables/cpu_scheduling/sjf-nonpreemptive ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log("hi" + stdout);
 		console.log(error);
 		res.send(stdout);
 	});
@@ -49,7 +47,6 @@ router.post('/sjf-preemptive', function(req,res){
 	console.log(input);
 	
 	exec(__dirname + '/executables/cpu_scheduling/sjf-preemptive ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log("hi" + stdout);
 		console.log(error);
 		res.send(stdout);
 	});
@@ -67,7 +64,6 @@ router.post('/priority-nonpreemptive', function(req,res){
 	console.log(input);
 	*/
 	exec(__dirname + '/executables/cpu_scheduling/priority-nonpreemptive ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log("hi" + stdout);
 		console.log(error);
 		res.send(stdout);
 	});
@@ -85,7 +81,6 @@ router.post('/priority-preemptive', function(req,res){
 	console.log(input);
 	*/
 	exec(__dirname + '/executables/cpu_scheduling/priority-preemptive ' + req.body.input , function callback(error,stdout,stderr) {
-		console.log("hi" + stdout);
 		console.log(error);
 		res.send(stdout);
 	});
