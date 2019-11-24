@@ -179,22 +179,22 @@ function submit() {
     //     async: false
     // });
 
-     $.ajax({
-        type: "POST",
-        url: "/cpu_scheduling/multilevel_queue",
-        data: {input : input_q},
-        success: function(result){
-            console.log(result);
+    //  $.ajax({
+    //     type: "POST",
+    //     url: "/cpu_scheduling/multilevel_queue",
+    //     data: {input : input_q},
+    //     success: function(result){
+    //         console.log(result);
 
-            output[5] = result;
-            result = result.split('\n');
-            var len = result.length;
-            tt[5] = result[len-1];
-            wt[5] = result[len-2];
+    //         output[5] = result;
+    //         result = result.split('\n');
+    //         var len = result.length;
+    //         tt[5] = result[len-1];
+    //         wt[5] = result[len-2];
 
-        },
-        async: false
-    });
+    //     },
+    //     async: false
+    // });
     print_table(output);
     draw_graph(tt, wt);
 
@@ -207,7 +207,7 @@ function to_float(output){
 }
 
 function draw_graph(tt, wt) {
-    var algo = ['FCFS','SJF Non-preemptive', 'SJF Preemptive', 'Priority Non-preemptive', 'Priority Preemptive', 'Multilevel Queue'];
+    var algo = ['FCFS','SJF Non-preemptive', 'SJF Preemptive', 'Priority Non-preemptive', 'Priority Preemptive'];
     tt = to_float(tt);
     wt = to_float(wt);
     console.log(tt);
@@ -261,7 +261,7 @@ function draw_graph(tt, wt) {
 
 function print_table(output) {
     console.log(output);
-    var algo = ['FCFS','SPN (SJN Non-Preemptive)', 'SRT (SJN Preemptive)', 'Priority Non-preemptive', 'Priority Preemptive', 'Multilevel Queue'];
+    var algo = ['FCFS','SPN (SJN Non-Preemptive)', 'SRT (SJN Preemptive)', 'Priority Non-preemptive', 'Priority Preemptive'];
     $("body").append("<div class='container-fluid' id='output'></div>");
     var op = $('#output');
 

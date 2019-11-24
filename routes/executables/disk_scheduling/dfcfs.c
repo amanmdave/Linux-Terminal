@@ -1,32 +1,3 @@
-/*
-
-Done By Mahir Jain 16CO123
-
-IO FORMAT
-
-   
-For example if the input values are this:
-
-	cylinder_size = 200
-	current_head_position=50
-	previous_head_position=90
-
-	request_array = {95,180,34,11,119,123,64,62}
-
-
-
-Command is executed as:
-./exe_file cylinder_size current_head_position previous_head_position request_array
-
-which in this case is,
-./cscan 200 50 90 95 180 34 11 119 123 64 62
-Output:
-Sequence of movement is: 50 --> 95 --> 180 --> 34 --> 11 --> 119 --> 123 --> 64 --> 62 --> 
-Total seek time = 472
-Average Seek time = 59.000000
-
-*/
-
 #include<stdio.h>
 #include<math.h>
 #include<stdlib.h>

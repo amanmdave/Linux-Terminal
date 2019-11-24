@@ -1,34 +1,3 @@
-/*
-
-Done By Mahir Jain 16CO123
-
-IO FORMAT
-
-   
-For example if the input values are this:
-
-	cylinder_size = 200
-	current_head_position=50
-	previous_head_position=90
-
-	request_array = {95,180,34,11,119,123,64,62}
-
-
-
-Command is executed as:
-./exe_file cylinder_size current_head_position previous_head_position request_array
-
-which in this case is,
-./cscan 200 50 90 95 180 34 11 119 123 64 62
-Output:
-Sequence of movement is: 50 --> 34 --> 11 --> 180 --> 123 --> 119 --> 95 --> 64 --> 62 --> 
-Total seek time = 187
-Average Seek time = 23.375000
-*/
-
-
-
-
 #include<stdio.h>
 #include<ctype.h>
 #include<stdlib.h>
@@ -76,7 +45,7 @@ main(int argc, char **argv)
 	posl=i;
 	if(dir)
 	{
-		totseek = (jl)  + (size-1-cur);
+		totseek = (jl)  + (size-cur) + size;
 		for(i=0;i<n;i++)
 		{
 			if(req[i]<cur)
@@ -99,7 +68,7 @@ main(int argc, char **argv)
 	}
 	else
 	{
-		totseek = (cur) + (size-1-jr);
+		totseek = (cur) + (size-jr) + size;
 		
 		for(i=n-1;i>=0;i--)
 		{
